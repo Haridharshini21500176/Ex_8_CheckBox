@@ -28,24 +28,124 @@ Step 7: Save and run the application.
  ```
 /*
 Program to create an Option Menu
-Developed by: 
-RegisterNumber:  
+Developed by: Haridharshini.S
+RegisterNumber: 212221230033
 */
 ```
 
 ## MainActivity.java:
+```
+package com.example.ex_8;
 
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
+import android.os.Bundle;
 
+public class MainActivity extends AppCompatActivity {
+    private CheckBox chkAndroid, chkJava, chkPhp, chkCpp, chkC;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        chkAndroid = findViewById(R.id.chkAndroid);
+        chkJava = findViewById(R.id.chkJava);
+        chkPhp = findViewById(R.id.chkPhp);
+        chkCpp = findViewById(R.id.chkCpp);
+        chkC = findViewById(R.id.chkC);
+    }
+    public void showSelected(View view) {
 
+        String selected = "You selected: \n";
 
+        if(chkAndroid.isChecked())
+            selected += "Android";
 
+        if(chkJava.isChecked())
+            selected += "\nJava";
+
+        if(chkPhp.isChecked())
+            selected += "\nPHP";
+
+        if(chkCpp.isChecked())
+            selected += "\nCPP";
+
+        if(chkC.isChecked())
+            selected += "\nC";
+
+        Toast.makeText(MainActivity.this, selected, Toast.LENGTH_SHORT).show();
+    }
+}
+```
 ## activity_main.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Select Your favourite Programming language"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_margin="10dp"
+        android:textStyle="bold"/>
 
-## AndroidMainfest.xml
+    <CheckBox
+        android:id="@+id/chkAndroid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android"
+        style="@style/TextAppearance.AppCompat.Headline"/>
+
+    <CheckBox
+        android:id="@+id/chkJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Java"
+        style="@style/TextAppearance.AppCompat.Headline"/>
+
+    <CheckBox
+        android:id="@+id/chkPhp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHP"
+        style="@style/TextAppearance.AppCompat.Headline"/>
+
+    <CheckBox
+        android:id="@+id/chkCpp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPP"
+        style="@style/TextAppearance.AppCompat.Headline"/>
+
+    <CheckBox
+        android:id="@+id/chkC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        style="@style/TextAppearance.AppCompat.Headline"/>
+
+    <Button android:id="@+id/btnDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display"
+        android:layout_marginTop="20dp"
+        android:onClick="showSelected"/>
+
+</LinearLayout>
+```
+
 
 ## Output
+![244914077-9757d407-2f63-4831-bf3c-fdf17642e25d](https://github.com/Haridharshini21500176/Ex_8_CheckBox/assets/94168395/142b887b-c912-4dda-8f6b-b629586cbdb4)
 
+![image](https://github.com/Haridharshini21500176/Ex_8_CheckBox/assets/94168395/aabe9506-57c5-41ac-aa9f-316b77c9c89f)
 
 
 ## Result:
